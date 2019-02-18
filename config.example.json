@@ -13,10 +13,13 @@
         "CHANNEL_TAG": "< pushbullet channel tag >",
         "SERVER_NAME": "< name of this server >"
     },
-    "IGNORE_FILES": [
-        "etrg",
-        "sample",
-        "rarbg",
-        "rarbg com"
-    ]
+    "BLACKLIST": {
+        "NAMES": [
+            "etrg",
+            "sample",
+            "rarbg",
+            "rarbg com"
+        ],
+        "DELETE_FILES": true
+    }
 }
