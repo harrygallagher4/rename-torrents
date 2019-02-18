@@ -1,5 +1,5 @@
 # rename-torrents
-node.js script for renaming torrents. work in progress.
+node.js script for renaming torrents. supports sending PushBullet notifications when a new file is added. work in progress.
 
 ## diclaimer
 
