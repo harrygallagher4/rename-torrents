@@ -1,0 +1,20 @@
+{
+  "name": "rename-torrent",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-typescript": "^7.0.0-beta.3",
+    "moment": "^2.22.1",
+    "moviedb": "^0.2.10",
+    "node-tvdb": "^4.0.0",
+    "request": "^2.88.0",
+    "torrent-files-library": "^1.5.1",
+    "torrent-name-parser": "git+https://github.com/jy95/torrent-name-parser"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1"
+  }
+}

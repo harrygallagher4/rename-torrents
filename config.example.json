@@ -1,0 +1,22 @@
+{
+    "AUTH": {
+        "TMDB_API_KEY": "< your tmdb key >",
+        "TVDB_API_KEY": "< your tvdb key >",
+        "PUSHBULLET_API_KEY": "< your pushbullet key >"
+    },
+    "PATHS": {
+        "MOVIE_PATH": "/var/lib/plexmediaserver/media/movies",
+        "TV_PATH": "/var/lib/plexmediaserver/media/tv",
+        "NEW_PATH": "/var/lib/plexmediaserver/media/new"
+    },
+    "PUSHBULLET": {
+        "CHANNEL_TAG": "< pushbullet channel tag >",
+        "SERVER_NAME": "< name of this server >"
+    },
+    "IGNORE_FILES": [
+        "etrg",
+        "sample",
+        "rarbg",
+        "rarbg com"
+    ]
+}
