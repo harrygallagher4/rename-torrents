@@ -121,6 +121,7 @@ function processMovie(file) {
 
             console.log(`[MOVIES]: MOVING:\t${file} => ${path}`);
             fs.rename(file, path, e => { console.log(e); });
+            tl.removeOldFiles(file);
 
             const options = {
                 headers: {
@@ -191,6 +192,26 @@ function processTV(file) {
 
         console.log(`[TV SHOWS] MOVING:\t${file} => ${episodePath}`);
         fs.rename(file, episodePath, e => { console.log(e); });
+        tl.removeOldFiles(file);
+
+        const options = {
+            headers: {
+                'Access-Token': PUSHBULLET_API_KEY
+            },
+            uri: 'https://api.pushbullet.com/v2/pushes',
+            method: 'POST',
+            json: {
+                'channel_tag': `${PUSHBULLET.CHANNEL_TAG}`,
+                'type': 'note',
+                'title': `${PUSHBULLET.SERVER_NAME} - ${torrent.title}`,
+                'body': `An episode of ${torrent.title} was added to ${PUSHBULLET.SERVER_NAME}`
+            }
+        };
+
+        request(options, (e, r, b) => {
+            console.log(e, b);
+        });
+
     } catch (e) {
         console.error(e);
     }
@@ -201,12 +222,12 @@ function scanAndMove() {
     tl.scan()
         .then(message => {
             tl.allFilesWithCategory.forEach((type, file) => {
-                if (type == 'MOVIES') {
-                    if (!fs.existsSync(file)) {
-                        console.log(`[MOVIES] Skipping: ${file}`);
-                        return;
-                    }
+                if (!fs.existsSync(file)) {
+                    console.log(`Skipping: ${file}`);
+                    return;
+                }
 
+                if (type == 'MOVIES') {
                     //TODO this is a hack
                     if (file.toLowerCase().includes('sample')) {
                         console.log(`[MOVIES] Detected sample file, deleting: ${file}`);
@@ -225,7 +246,7 @@ function scanAndMove() {
                     console.log(`[TV] Processing: ${file}`);
                     processTV(file);
                 } else {
-                    console.log(`[${type}] Ignoring: ${file}`);
+                    console.log(`[${type}] Unknown type, ignoring: ${file}`);
                 }
             });
         })
