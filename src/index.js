@@ -106,6 +106,8 @@ function processMovie(file) {
     }, (e, r) => {
         if (e || !r || !r.results || !r.results[0]) {
             console.log(`NO MATCH! ${torrent.title}`);
+            console.log(e);
+            console.log(r && r.results && r.results[0] || null);
             return;
         }
 
