@@ -17,7 +17,7 @@
     "@dropb/ffprobe": "^1.4.2",
     "moment": "^2.22.1",
     "moviedb": "^0.2.10",
-    "node-tvdb": "^4.0.0",
+    "node-tvdb": "^4.1.0",
     "request": "^2.88.0",
     "torrent-files-library": "^1.5.1",
     "torrent-name-parser": "git+https://github.com/jy95/torrent-name-parser"
