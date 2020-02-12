@@ -18,7 +18,7 @@
     "moment": "^2.24.0",
     "moviedb": "^0.2.10",
     "node-tvdb": "^4.1.0",
-    "request": "^2.88.0",
+    "request": "^2.88.2",
     "torrent-files-library": "^1.5.1",
     "torrent-name-parser": "git+https://github.com/jy95/torrent-name-parser"
   },
