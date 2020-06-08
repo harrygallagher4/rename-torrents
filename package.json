@@ -23,6 +23,6 @@
     "torrent-name-parser": "git+https://github.com/jy95/torrent-name-parser"
   },
   "devDependencies": {
-    "eslint": "^6.5.1"
+    "eslint": "^7.2.0"
   }
 }
